@@ -12,7 +12,7 @@ module.exports = function(app) {
     const body = {
       client_id: CLIENT_ID,
       client_secret: CLIENT_SECRET,
-      redirect_uri: 'http://localhost:3000/login',
+      redirect_uri: 'http://localhost:3000/',
       code: req.params.code,
       grant_type: 'authorization_code',
     }
