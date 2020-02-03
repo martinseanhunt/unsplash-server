@@ -3,6 +3,7 @@ const axios = require('axios')
 
 const CLIENT_ID = process.env.UNSPLASH_API
 const CLIENT_SECRET = process.env.UNSPLASH_API_SECRET
+const REDIRECT_URI = process.env.REDIRECT_URI
 
 module.exports = function(app) {
   app.get('/', (req, res, next) => 
@@ -12,7 +13,7 @@ module.exports = function(app) {
     const body = {
       client_id: CLIENT_ID,
       client_secret: CLIENT_SECRET,
-      redirect_uri: 'http://localhost:3000/',
+      redirect_uri: REDIRECT_URI,
       code: req.params.code,
       grant_type: 'authorization_code',
     }
